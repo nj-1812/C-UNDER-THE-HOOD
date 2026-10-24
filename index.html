@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Syntax Squad – Learn C Basics</title>
+  <meta name="description" content="A cinematic superhero game that teaches first-year CSE students the basics of C programming — and why every line exists.">
+  <meta name="theme-color" content="#0B0B0F">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23E3262F'/%3E%3Ctext x='32' y='44' font-family='Arial Black,Arial' font-size='30' font-weight='900' text-anchor='middle' fill='white'%3E%7B%7D%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <button class="logo" data-go="home" aria-label="Home">
+      <span class="logo-mark">{}</span>
+      <span class="logo-text">SYNTAX <b>SQUAD</b></span>
+    </button>
+    <div class="top-right">
+      <div class="score-pill" title="Your score"><span class="bolt">⚡</span><span id="score">0</span></div>
+      <button class="icon-btn" data-go="notebook" title="My C Notebook">📓<span id="cardCount">0</span></button>
+      <button class="icon-btn" data-go="host" title="Host panel" aria-label="Host panel">⚙</button>
+    </div>
+  </header>
+
+  <main id="app"></main>
+
+  <div id="modal-root"></div>
+  <div id="toast-root"></div>
+
+  <noscript><p style="padding:40px;text-align:center">Please enable JavaScript to play Syntax Squad.</p></noscript>
+
+  <script src="js/content.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
