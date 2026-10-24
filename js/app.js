@@ -51,7 +51,7 @@
   let curRound = -1;
   function addScore(n) {
     n = Math.round(n); if (n <= 0 || curRound < 0) return;
-    const id = ROUNDS[curRound].id; S.score += n; S.rs[id] = (S.rs[id] || 0) + n; save(); updateTop(); floatPts(n);
+    const id = ROUNDS[curRound].id; S.score += n; S.rs[id] = (S.rs[id] || 0) + n; save(); updateTop(); floatPts(n); if (window.SQART) window.SQART.burst();
     const sp = $('.score-pill'); sp.classList.remove('bump'); void sp.offsetWidth; sp.classList.add('bump');
   }
 
@@ -81,6 +81,7 @@
   /* ---------------- SVG ART (all original) ---------------- */
   let svgN = 0;
   function heroSVG(id, cls) {
+    if (window.SQART) return window.SQART.hero(id, cls);
     const h = HEROES[id]; const n = 'h' + (++svgN);
     const glyphSize = h.glyph.length > 1 ? 19 : 26;
     const horns = h.villain ? `<path d="M101 44 L88 10 L114 36 Z M139 44 L152 10 L126 36 Z" fill="${h.color}"/>` : '';
@@ -187,7 +188,7 @@
       : `<button class="btn btn-primary" data-go="intro" data-arg="${nx}">▶ ${S.score || Object.keys(S.done).length ? 'CONTINUE MISSION' : 'START MISSION'}</button>`;
     app.innerHTML = `
     <section class="banner">
-      <div class="banner-bg"><div class="banner-slash"></div><div class="watermark">SQUAD</div></div>
+      <div class="banner-bg"><div class="banner-rays"></div><div class="banner-slash"></div><div class="watermark">SQUAD</div></div>
       <div class="banner-text">
         <div class="kicker"><span class="dot"></span> A C PROGRAMMING ORIGIN STORY</div>
         <h1 class="mega">SYNTAX<br><span class="red">SQUAD</span></h1>
@@ -195,7 +196,7 @@
         <p class="lead">Every line of C has a reason. Join the squad, earn your powers, and discover <b>why</b> <code>#include</code>, <code>main()</code>, <code>;</code> and <code>&amp;</code> exist — not just how to type them.</p>
         <div class="btn-row">${startBtn}<button class="btn" data-go="notebook">📓 MY NOTEBOOK</button></div>
       </div>
-      <div class="banner-hero">${heroSVG('rookie', 'float')}</div>
+      <div class="banner-hero">${window.SQART ? window.SQART.lineup() : heroSVG('rookie', 'float')}</div>
     </section>
 
     <section class="section">
