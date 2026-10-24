@@ -48,6 +48,7 @@ css/style.css     base layout (mobile-first)
 css/comic.css     comic-book theme layer
 js/content.js     all game content (edit this)
 js/app.js         game engine
+js/guard.js       blocks copy/paste (delete this file + its script tag to re-enable)
 js/art.js         original comic-style hero artwork
 .nojekyll         tells GitHub Pages to serve files as-is
 ```
