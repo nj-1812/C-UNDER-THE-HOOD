@@ -44,9 +44,11 @@ Inside JS strings, write a C newline as `\\n`.
 
 ```
 index.html        page shell
-css/style.css     theme & layout (mobile-first)
+css/style.css     base layout (mobile-first)
+css/comic.css     comic-book theme layer
 js/content.js     all game content (edit this)
 js/app.js         game engine
+js/art.js         original comic-style hero artwork
 .nojekyll         tells GitHub Pages to serve files as-is
 ```
 
